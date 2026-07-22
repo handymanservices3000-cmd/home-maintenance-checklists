@@ -95,4 +95,4 @@ Regular home maintenance helps prevent costly repairs, improves safety, increase
 
 For additional homeowner maintenance guides, repair resources, and professional residential and commercial handyman services, visit:
 
-**https://www.handymanontherun.com**
+[Handyman On The Run®](https://www.handymanontherun.com)
