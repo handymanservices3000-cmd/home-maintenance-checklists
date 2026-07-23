@@ -1,4 +1,15 @@
-/* ===== Global Styles ===== */
+/* ====================================================
+   Handyman On The Run® Knowledge Center
+==================================================== */
+
+:root{
+    --pink:#ec4fd4;
+    --dark:#2f2f34;
+    --light:#ffffff;
+    --bg:#f8f8fa;
+    --border:#e6e6e6;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
 
 *{
     margin:0;
@@ -6,125 +17,219 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    color:#333;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--dark);
     line-height:1.7;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* ===== Header ===== */
+/* ================= HEADER ================= */
 
 header{
-    background:#0b3d91;
-    color:white;
-    padding:20px 0;
+    background:white;
+    border-bottom:4px solid var(--pink);
+    box-shadow:var(--shadow);
+    position:sticky;
+    top:0;
+    z-index:999;
 }
 
 header h1{
     text-align:center;
-    margin-bottom:15px;
+    color:var(--pink);
+    padding:35px 20px 15px;
+    font-size:46px;
 }
 
 nav{
     display:flex;
     justify-content:center;
-    gap:30px;
+    gap:35px;
+    padding-bottom:25px;
     flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
+    color:var(--dark);
     font-weight:bold;
+    transition:.3s;
 }
 
 nav a:hover{
-    color:#ffd54f;
+    color:var(--pink);
 }
 
-/* ===== Hero ===== */
+nav a:last-child{
+    background:var(--pink);
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+}
+
+/* ================= HERO ================= */
+
+section:first-of-type{
+    background:linear-gradient(135deg,#ffffff,#ffe8fb);
+    padding:120px 30px;
+    text-align:center;
+}
+
+section:first-of-type h2{
+    font-size:58px;
+    color:var(--dark);
+    margin-bottom:25px;
+}
+
+section:first-of-type p{
+    max-width:900px;
+    margin:auto;
+    font-size:22px;
+    color:#555;
+}
+
+/* ================= CONTENT ================= */
 
 section{
-    padding:60px 20px;
-}
-
-section:nth-child(even){
-    background:white;
+    width:92%;
+    max-width:1250px;
+    margin:auto;
+    padding:80px 0;
 }
 
 section h2{
-    color:#0b3d91;
-    margin-bottom:20px;
+    font-size:40px;
+    margin-bottom:25px;
+    color:var(--pink);
 }
 
 section p{
-    max-width:900px;
-    margin-bottom:20px;
+    font-size:18px;
+    color:#555;
+    margin-bottom:25px;
 }
 
-/* ===== Guide List ===== */
+/* ================= GUIDE BOXES ================= */
 
 ul{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
     list-style:none;
-    margin-top:25px;
+    margin-top:40px;
 }
 
 li{
     background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    border-radius:16px;
+    padding:35px;
+    border-top:6px solid var(--pink);
+    box-shadow:var(--shadow);
     transition:.3s;
+    font-size:20px;
+    font-weight:bold;
 }
 
 li:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 }
 
-/* ===== Links ===== */
+/* ================= BUTTONS ================= */
+
+.button,
+.btn{
+    display:inline-block;
+    background:var(--pink);
+    color:white;
+    padding:15px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button:hover,
+.btn:hover{
+    background:#d935bb;
+}
+
+/* ================= LINKS ================= */
 
 a{
-    color:#0b3d91;
+    color:var(--pink);
 }
 
 a:hover{
-    color:#ff6600;
+    color:#d935bb;
 }
 
-/* ===== Footer ===== */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#111827;
+    background:var(--dark);
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:60px 20px;
 }
 
 footer a{
-    color:#4da6ff;
+    color:var(--pink);
+    text-decoration:none;
+    font-weight:bold;
 }
 
-/* ===== Responsive ===== */
+footer a:hover{
+    color:white;
+}
 
-@media(max-width:768px){
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+header h1{
+    font-size:34px;
+}
+
+section:first-of-type h2{
+    font-size:42px;
+}
+
+section:first-of-type p{
+    font-size:18px;
+}
+
+section h2{
+    font-size:32px;
+}
+
+li{
+    font-size:18px;
+}
+
+}
+
+@media(max-width:600px){
 
 nav{
-    flex-direction:column;
-    align-items:center;
+    gap:18px;
+}
+
+section:first-of-type{
+    padding:80px 20px;
+}
+
+section:first-of-type h2{
+    font-size:34px;
 }
 
 section{
-    padding:40px 20px;
+    width:94%;
 }
 
 }
