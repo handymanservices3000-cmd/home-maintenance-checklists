@@ -2,234 +2,623 @@
    Handyman On The Run® Knowledge Center
 ==================================================== */
 
-:root{
-    --pink:#ec4fd4;
-    --dark:#2f2f34;
-    --light:#ffffff;
-    --bg:#f8f8fa;
-    --border:#e6e6e6;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
+:root {
+    --pink: #ec4fd4;
+    --pink-dark: #d935bb;
+    --dark: #2f2f34;
+    --text: #555555;
+    --light: #ffffff;
+    --bg: #f8f8fa;
+    --border: #e6e6e6;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--dark);
-    line-height:1.7;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    display: block;
 }
 
 /* ================= HEADER ================= */
 
-header{
-    background:white;
-    border-bottom:4px solid var(--pink);
-    box-shadow:var(--shadow);
-    position:sticky;
-    top:0;
-    z-index:999;
+.site-header,
+header {
+    background: var(--light);
+    border-bottom: 3px solid var(--pink);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-header h1{
-    text-align:center;
-    color:var(--pink);
-    padding:35px 20px 15px;
-    font-size:46px;
+.header-inner {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 10px 0;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:35px;
-    padding-bottom:25px;
-    flex-wrap:wrap;
+.header-inner > a {
+    display: block;
+    width: 290px;
+    height: 88px;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-nav a{
-    text-decoration:none;
-    color:var(--dark);
-    font-weight:bold;
-    transition:.3s;
+.site-logo {
+    display: block;
+    width: 290px;
+    height: 88px;
+    object-fit: contain;
+    object-position: left center;
 }
 
-nav a:hover{
-    color:var(--pink);
+/* ================= NAVIGATION ================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
-nav a:last-child{
-    background:var(--pink);
-    color:white;
-    padding:12px 22px;
-    border-radius:30px;
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+    transform: translateY(-1px);
+}
+
+nav .service-button,
+nav a:last-child {
+    background: var(--pink);
+    color: var(--light);
+    padding: 11px 20px;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(236, 79, 212, 0.22);
+}
+
+nav .service-button:hover,
+nav a:last-child:hover {
+    background: var(--pink-dark);
+    color: var(--light);
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+section {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px 0;
+}
+
+section h1,
+section h2,
+section h3 {
+    line-height: 1.25;
+}
+
+section h2 {
+    color: var(--pink);
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+
+section h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+section p {
+    color: var(--text);
+    font-size: 18px;
+    margin-bottom: 22px;
 }
 
 /* ================= HERO ================= */
 
-section:first-of-type{
-    background:linear-gradient(135deg,#ffffff,#ffe8fb);
-    padding:120px 30px;
-    text-align:center;
+.hero,
+section:first-of-type {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 90px 30px;
+    background: linear-gradient(135deg, #ffffff, #ffe8fb);
+    text-align: center;
 }
 
-section:first-of-type h2{
-    font-size:58px;
-    color:var(--dark);
-    margin-bottom:25px;
+.hero h1,
+section:first-of-type h1,
+section:first-of-type h2 {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    color: var(--dark);
+    font-size: 54px;
 }
 
-section:first-of-type p{
-    max-width:900px;
-    margin:auto;
-    font-size:22px;
-    color:#555;
+.hero p,
+section:first-of-type p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text);
+    font-size: 21px;
 }
 
-/* ================= CONTENT ================= */
+/* ================= BREADCRUMBS ================= */
 
-section{
-    width:92%;
-    max-width:1250px;
-    margin:auto;
-    padding:80px 0;
+.breadcrumb {
+    margin-bottom: 18px !important;
+    color: #777777 !important;
+    font-size: 15px !important;
 }
 
-section h2{
-    font-size:40px;
-    margin-bottom:25px;
-    color:var(--pink);
+.breadcrumb a {
+    color: var(--pink);
+    text-decoration: none;
+    font-weight: 700;
 }
 
-section p{
-    font-size:18px;
-    color:#555;
-    margin-bottom:25px;
+.breadcrumb a:hover {
+    color: var(--pink-dark);
 }
 
-/* ================= GUIDE BOXES ================= */
+/* ================= GUIDE LIST ON HOMEPAGE ================= */
 
-ul{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    list-style:none;
-    margin-top:40px;
+#guides ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+    padding: 0;
 }
 
-li{
-    background:white;
-    border-radius:16px;
-    padding:35px;
-    border-top:6px solid var(--pink);
-    box-shadow:var(--shadow);
-    transition:.3s;
-    font-size:20px;
-    font-weight:bold;
+#guides li {
+    min-height: 105px;
+    background: var(--light);
+    border-radius: 14px;
+    border-top: 5px solid var(--pink);
+    box-shadow: var(--shadow);
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-li:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
+#guides li:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+#guides li a {
+    width: 100%;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+#guides li a:hover {
+    color: var(--pink);
+}
+
+/* ================= GENERIC LISTS ================= */
+
+section ul:not(#guides ul) {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 30px 0;
+    padding: 0;
+}
+
+section ul:not(#guides ul) li {
+    background: var(--light);
+    border-left: 4px solid var(--pink);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 18px 20px;
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ================= CHECKLIST ================= */
+
+.checklist {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.checklist li {
+    position: relative;
+    background: var(--light);
+    border-left: 4px solid var(--pink);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 18px 20px 18px 48px;
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    color: var(--pink);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* ================= NUMBERED STEPS ================= */
+
+.numbered-steps {
+    counter-reset: steps;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.numbered-steps li {
+    counter-increment: steps;
+    position: relative;
+    margin-bottom: 18px;
+    padding: 24px 24px 24px 76px;
+    background: var(--light);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+    font-size: 17px;
+}
+
+.numbered-steps li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 22px;
+    top: 20px;
+    width: 38px;
+    height: 38px;
+    background: var(--pink);
+    color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.numbered-steps strong {
+    color: var(--dark);
+}
+
+/* ================= GUIDE CARDS ================= */
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.guide-card {
+    background: var(--light);
+    border-top: 5px solid var(--pink);
+    border-radius: 15px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.guide-card h3 {
+    font-size: 22px;
+}
+
+.guide-card p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.guide-card a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.guide-card a:hover {
+    color: var(--pink);
+}
+
+/* ================= FAQ ================= */
+
+.faq-item {
+    background: var(--light);
+    border-left: 5px solid var(--pink);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 26px;
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    color: var(--dark);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+/* ================= LINKS ================= */
+
+a {
+    color: var(--pink);
+}
+
+a:hover {
+    color: var(--pink-dark);
 }
 
 /* ================= BUTTONS ================= */
 
 .button,
-.btn{
-    display:inline-block;
-    background:var(--pink);
-    color:white;
-    padding:15px 30px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+.btn,
+.service-button {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--light);
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover,
-.btn:hover{
-    background:#d935bb;
+.btn:hover,
+.service-button:hover {
+    background: var(--pink-dark);
+    color: var(--light);
+    transform: translateY(-2px);
 }
 
-/* ================= LINKS ================= */
+/* ================= CTA SECTION ================= */
 
-a{
-    color:var(--pink);
+.cta-section {
+    text-align: center;
+    background: var(--dark);
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    padding: 65px 35px;
 }
 
-a:hover{
-    color:#d935bb;
+.cta-section h2 {
+    color: var(--light);
+}
+
+.cta-section p {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #eeeeee;
+}
+
+.cta-section strong {
+    color: var(--pink);
+}
+
+/* ================= RELATED GUIDES ================= */
+
+.related-guides {
+    border-top: 1px solid var(--border);
 }
 
 /* ================= FOOTER ================= */
 
-footer{
-    background:var(--dark);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
+footer {
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 55px 20px;
 }
 
-footer a{
-    color:var(--pink);
-    text-decoration:none;
-    font-weight:bold;
+footer p {
+    max-width: 900px;
+    margin: 8px auto;
+    color: #eeeeee;
 }
 
-footer a:hover{
-    color:white;
+footer a {
+    color: var(--pink);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    color: var(--light);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        min-height: auto;
+        padding: 14px 0 18px;
+    }
+
+    .header-inner > a {
+        width: 250px;
+        height: 78px;
+    }
+
+    .site-logo {
+        width: 250px;
+        height: 78px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero,
+    section:first-of-type {
+        padding: 75px 24px;
+    }
+
+    .hero h1,
+    section:first-of-type h1,
+    section:first-of-type h2 {
+        font-size: 42px;
+    }
+
+    .hero p,
+    section:first-of-type p {
+        font-size: 18px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:900px){
+@media (max-width: 600px) {
 
-header h1{
-    font-size:34px;
-}
+    .site-header,
+    header {
+        position: relative;
+    }
 
-section:first-of-type h2{
-    font-size:42px;
-}
+    .header-inner {
+        width: 94%;
+    }
 
-section:first-of-type p{
-    font-size:18px;
-}
+    .header-inner > a {
+        width: 220px;
+        height: 68px;
+    }
 
-section h2{
-    font-size:32px;
-}
+    .site-logo {
+        width: 220px;
+        height: 68px;
+    }
 
-li{
-    font-size:18px;
-}
+    nav {
+        gap: 12px;
+    }
 
-}
+    nav a {
+        font-size: 14px;
+    }
 
-@media(max-width:600px){
+    nav .service-button,
+    nav a:last-child {
+        padding: 10px 16px;
+    }
 
-nav{
-    gap:18px;
-}
+    .hero,
+    section:first-of-type {
+        padding: 60px 18px;
+    }
 
-section:first-of-type{
-    padding:80px 20px;
-}
+    .hero h1,
+    section:first-of-type h1,
+    section:first-of-type h2 {
+        font-size: 34px;
+    }
 
-section:first-of-type h2{
-    font-size:34px;
-}
+    .hero p,
+    section:first-of-type p {
+        font-size: 17px;
+    }
 
-section{
-    width:94%;
-}
+    section {
+        width: 94%;
+        padding: 55px 0;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    #guides ul,
+    .guide-grid,
+    .checklist,
+    section ul:not(#guides ul) {
+        grid-template-columns: 1fr;
+    }
+
+    #guides li {
+        min-height: auto;
+    }
+
+    .numbered-steps li {
+        padding: 22px 18px 22px 68px;
+    }
+
+    .cta-section {
+        border-radius: 14px;
+        padding: 48px 22px;
+    }
 
 }
